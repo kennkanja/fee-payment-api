@@ -1,0 +1,145 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Payments</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+    
+     
+   <div class="box-wrap" style="padding: 0px 16px;">
+    <div class="table-wrap" style="max-width: 1200px;
+    margin: 80px auto;
+    overflow-x: auto;">
+        <table style="border: 1px solid #ddd;border-collapse: collapse;
+        width: 100%;">
+            <h3>Student</h3>
+           <thead>
+            <tr>
+                <th style="border: 1px solid #ddd; text-align: left;
+                font-size: 18px;padding: 15px;
+  white-space: nowrap;
+                text-transform: capitalize;background: #000000d6;
+   color: #fff;">Reg No </th>
+                <th style="border: 1px solid #ddd; text-align: left;
+                font-size: 18px;padding: 15px;
+  white-space: nowrap;
+                text-transform: capitalize;background: #000000d6;
+   color: #fff;">Name </th>
+                <th style="border: 1px solid #ddd; text-align: left;
+                font-size: 18px;background: #000000d6;
+   color: #fff;padding: 15px;
+  white-space: nowrap;
+                text-transform: capitalize;">Course </th>
+                
+                <th style="border: 1px solid #ddd; text-align: left;
+                font-size: 18px;background: #000000d6;
+   color: #fff;padding: 15px;
+  white-space: nowrap;
+                text-transform: capitalize;">Year </th>
+                <th style="border: 1px solid #ddd; text-align: left;
+                font-size: 18px;background: #000000d6;
+   color: #fff;padding: 15px;
+  white-space: nowrap;
+                text-transform: capitalize;">Fee</th>
+             </tr>
+           </thead>
+           <tbody >
+
+            {% for student in students %}
+            <tr style=":nth-child(odd){
+                tr:nth-child(-n+3);
+                background: #69b2ebcc;
+                color: #000;
+                font-weight: 500;
+              }">
+               <td style="border: 1px solid #ddd;text-align: left;
+               font-size: 18px;padding: 15px;
+  white-space: nowrap;
+               text-transform: capitalize;">{{student.reg_no}}</td>
+               <td style="border: 1px solid #ddd;text-align: left;
+               font-size: 18px;padding: 15px;
+  white-space: nowrap;
+               text-transform: capitalize;">{{student.name}}</td>
+               <td style="border: 1px solid #ddd;text-align: left;
+               font-size: 18px;padding: 15px;
+  white-space: nowrap;
+               text-transform: capitalize;">{{student.course}}</td>
+               <td style="border: 1px solid #ddd;text-align: left;
+               font-size: 18px;padding: 15px;
+  white-space: nowrap;
+               text-transform: capitalize;">{{student.year}}</td>
+               <td style="border: 1px solid #ddd;text-align: left;
+               font-size: 18px;padding: 15px;
+  white-space: nowrap;
+               text-transform: capitalize;">{{student.fee}}</td>
+            </tr>
+            {% endfor %}
+           </tbody>
+       </table>
+       
+    </div>
+   </div>
+
+   <div class="box-wrap" style="padding: 0px 16px;">
+    <div class="table-wrap" style="max-width: 1200px;
+    margin: 80px auto;
+    overflow-x: auto;">
+        <table style="border: 1px solid #ddd;border-collapse: collapse;
+        width: 100%;">
+            <h3>Payement</h3>
+           <thead>
+            <tr>
+                <th style="border: 1px solid #ddd; text-align: left;
+                font-size: 18px;padding: 15px;
+  white-space: nowrap;
+                text-transform: capitalize;background: #000000d6;
+   color: #fff;">Reg No </th>
+                <th style="border: 1px solid #ddd; text-align: left;
+                font-size: 18px;padding: 15px;
+  white-space: nowrap;
+                text-transform: capitalize;background: #000000d6;
+   color: #fff;">Amount </th>
+                <th style="border: 1px solid #ddd; text-align: left;
+                font-size: 18px;background: #000000d6;
+   color: #fff;padding: 15px;
+  white-space: nowrap;
+                text-transform: capitalize;">Date</th>
+                
+             </tr>
+           </thead>
+           <tbody >
+
+            {% for pay in pays %}
+            <tr style=":nth-child(odd){
+                tr:nth-child(-n+3);
+                background: #69b2ebcc;
+                color: #000;
+                font-weight: 500;
+              }">
+               <td style="border: 1px solid #ddd;text-align: left;
+               font-size: 18px;padding: 15px;
+  white-space: nowrap;
+               text-transform: capitalize;">{{pay.student}}</td>
+               <td style="border: 1px solid #ddd;text-align: left;
+               font-size: 18px;padding: 15px;
+  white-space: nowrap;
+               text-transform: capitalize;">{{pay.amount}}</td>
+               <td style="border: 1px solid #ddd;text-align: left;
+               font-size: 18px;padding: 15px;
+  white-space: nowrap;
+               text-transform: capitalize;">{{pay.time}}</td>
+               
+            </tr>
+            {% endfor %}
+           </tbody>
+       </table>
+       
+    </div>
+   </div>
+</body>
+</html>
